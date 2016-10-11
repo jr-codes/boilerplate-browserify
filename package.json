@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "Front-end boilerplate with Browserify",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "mkdir -p build",
+    "build:js": "browserify src/index.js | uglifyjs -o build/bundle.js",
+    "test": "xo --fix && ava",
+    "watch:test": "ava -w"
   },
   "repository": {
     "type": "git",
@@ -14,5 +17,57 @@
   "bugs": {
     "url": "https://github.com/zarjay/boilerplate-browserify/issues"
   },
-  "homepage": "https://github.com/zarjay/boilerplate-browserify#readme"
+  "homepage": "https://github.com/zarjay/boilerplate-browserify#readme",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-preset-latest": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.17.2",
+    "browserify": "^13.1.0",
+    "enzyme": "^2.4.1",
+    "eslint-config-xo-react": "^0.10.0",
+    "eslint-plugin-react": "^6.4.1",
+    "npm-run-all": "^3.1.0",
+    "react-addons-test-utils": "^15.3.2",
+    "uglify-js": "^2.7.3",
+    "watchify": "^3.7.0",
+    "xo": "^0.17.0"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "ava": {
+    "babel": "inherit",
+    "require": [
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "latest",
+      "react"
+    ]
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "xo": {
+    "esnext": true,
+    "extends": "xo-react",
+    "rules": {
+      "object-curly-spacing": [
+        2,
+        "always"
+      ],
+      "react/jsx-space-before-closing": [
+        2,
+        "always"
+      ],
+      "unicorn/filename-case": 0
+    }
+  }
 }
