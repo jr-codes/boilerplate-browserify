@@ -1,0 +1,18 @@
+{
+  "name": "boilerplate-browserify",
+  "version": "1.0.0",
+  "description": "Front-end boilerplate with Browserify",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://zarjay@github.com/zarjay/boilerplate-browserify.git"
+  },
+  "author": "JR Shampang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zarjay/boilerplate-browserify/issues"
+  },
+  "homepage": "https://github.com/zarjay/boilerplate-browserify#readme"
+}
