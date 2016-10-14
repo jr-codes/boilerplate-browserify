@@ -1,0 +1,11 @@
+@import "Header/Header.css";
+@import "Body/Body.css";
+@import "Footer/Footer.css";
+
+.App {
+	background: #e3f2fd;
+	box-shadow: 1px 1px 10px #aaa;
+	font-family: sans-serif;
+	margin: 2rem auto;
+	width: 20rem;
+}
